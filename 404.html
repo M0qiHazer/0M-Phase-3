@@ -63,7 +63,8 @@ function R(h){
     l.innerHTML="";l.appendChild(one);
   }
 }
-  var k=location.pathname.toLowerCase().replace(/[^a-z0-9]/g,"");
+  var ps=location.pathname.split("/").filter(function(x){return x;});
+  var k=(ps.length?ps[ps.length-1]:"").toLowerCase().replace(/[^a-z0-9]/g,"");
   var t=k?F(k):null;
   R(t||M());
   if(t)document.title="RETRIEVAL";
