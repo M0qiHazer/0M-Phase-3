@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>404</title>
+<style>
+  :root{--bg:#0a0b10;--fg:#c8d1e2;--dim:#5c6884;--acc:#7ee787}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:Consolas,"Cascadia Mono","Microsoft YaHei",monospace;font-size:15px;line-height:1.9}
+  #wrap{max-width:760px;margin:0 auto;padding:96px 24px 110px}
+  header{display:flex;justify-content:space-between;align-items:baseline;
+    border-bottom:1px solid rgba(120,150,190,.25);padding-bottom:14px;margin-bottom:44px;
+    letter-spacing:.18em;font-size:13px;color:var(--dim)}
+  header b{color:var(--fg);font-weight:400}
+  h2{font-size:16px;letter-spacing:.3em;font-weight:400;color:var(--acc);margin:0 0 22px}
+  p{font-size:14px;margin:0 0 16px;line-height:2}
+  .lead{color:#e8eef8}
+  .block{margin:24px 0;padding:18px 22px;background:#0e1018;
+    border:1px solid rgba(120,150,190,.2);color:#9fb0cc;font-size:13.5px;
+    line-height:2.1;white-space:pre;overflow-x:auto;letter-spacing:.12em}
+  #lattice{margin:22px 0;padding:18px 22px;background:#0e1018;
+    border:1px solid rgba(120,150,190,.2);overflow-x:auto}
+  #lattice .row{white-space:pre;font-size:12.5px;line-height:2.2;letter-spacing:.12em;color:#9fb0cc}
+  .dim{color:var(--dim);font-size:13px}
+  .redact{background:#000;color:#000;border-radius:1px}
+  .narrow{display:none}
+  @media (max-width:760px){ .narrow{display:block;color:#e6b450;font-size:13px;letter-spacing:.05em} }
+  .err{color:#8b93a8;font-size:17px;line-height:2.1;
+    border-left:2px solid rgba(120,150,190,.3);padding-left:22px;margin-bottom:30px}
+  .hide{display:none}
+  footer{margin-top:90px;padding-top:16px;border-top:1px solid rgba(120,150,190,.18);
+    font-size:12px;color:#3f485d;letter-spacing:.16em;display:flex;justify-content:space-between}
+</style>
+</head>
+<body>
+<div id="wrap">
+  <header><span><b>0LOSS</b> ARCHIVE</span><span>CASE 0M-14</span></header>
+  <div id="hitc"></div>
+  <footer><span>&copy; 0LOSS RHYTHM ARCHIVE</span><span>0M-14</span></footer>
+</div>
+<script>
+(function(){
+var A=[
+  "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"
+];
+function D(s,k){var r=atob(s),u=new Uint8Array(r.length);for(var i=0;i<r.length;i++){u[i]=r.charCodeAt(i)^k.charCodeAt(i%k.length);}return new TextDecoder("utf-8").decode(u);}
+function F(k){for(var i=0;i<A.length;i++){var t=D(A[i],k);if(t.indexOf("<h2>")===0&&t.indexOf("\x3c!--0m--\x3e")>0)return t;}return null;}
+function M(){return '<div class="err">Only feels like nothing could be better when I&#39;m with you.</div><div class="dim">404 — NOTHING AT THIS ADDRESS</div>';}
+function R(h){
+  var c=document.getElementById("hitc");
+  c.innerHTML=h;
+  var l=document.getElementById("lattice");
+  if(l&&l.children.length>1){
+    var k=[].slice.call(l.children);
+    var one=k[Math.floor(Math.random()*k.length)];
+    l.innerHTML="";l.appendChild(one);
+  }
+}
+  var k=location.pathname.toLowerCase().replace(/[^a-z0-9]/g,"");
+  var t=k?F(k):null;
+  R(t||M());
+  if(t)document.title="RETRIEVAL";
+})();
+</script>
+</body>
+</html>
